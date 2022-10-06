@@ -16,9 +16,9 @@ export interface ISendFirebaseMessages{
 export class AppService {
   constructor() {
     const firebaseCredentials = JSON.parse(process.env.FIREBASE_CREDENTIAL_JSON);
-
+    console.log(firebaseCredentials, "lolo")
     firebase.initializeApp({
-      credential: firebase.credential.cert(firebaseCred),
+      credential: firebase.credential.cert(firebaseCredentials),
       databaseURL: process.env.FIREBASE_DATABASE_URL
     })
   }
