@@ -13,7 +13,7 @@ export class AppController {
     try {
       return await this.appService.sendFirebaseMessages([payload])
     } catch (error) {
-      
+      return {error: error.message, message: "an error occurred"}
     }
   }
 
